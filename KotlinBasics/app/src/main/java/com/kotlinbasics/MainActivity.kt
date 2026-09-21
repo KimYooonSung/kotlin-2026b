@@ -27,12 +27,24 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week03Variables()
-        week03Functions()
-        week04Classes()
+//        week03Variables()
+//        week03Functions()
+//        week04Classes()
+        week04Collections()
     }
 
+}
 
+private fun week04Collections() {
+    println("== Kotlin Classes ==")
+
+    val fruits = listOf("apple", "banana", "orange")
+    val mutableFruits = mutableListOf("kiwu", "watermelon")
+
+//    fruits.add("kiwi") //immutable
+    println("Fruits: $fruits")
+    mutableFruits.add("banana")
+    println("Mutable fruits: $mutableFruits")
 }
 
 private fun week04Classes() {
@@ -40,7 +52,26 @@ private fun week04Classes() {
 
     class Student{
         var name: String = ""
+        var age: Int = 0
+
+        fun introduce(){
+            println("Hi, I'm $name and I'm $age years old")
+        }
     }
+    val student1 = Student()
+    student1.name = "Mirae"
+    student1.age = 21
+    student1.introduce()
+
+    data class Person(val name: String, val age: Int)
+
+    val person1 = Person(name = "Kim", age = 23)
+    val person2 = Person(name = "Park", age = 21)
+
+    println("Person1: $person1")
+    println("Person1: ${person1.name}")
+    println("Person1: ${person1.age}")
+    println("Person2: $person2")
 }
 
 private fun week03Variables() {
